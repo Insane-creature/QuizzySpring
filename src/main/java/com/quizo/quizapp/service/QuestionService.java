@@ -1,16 +1,24 @@
-package com.quizo.quizapp.service;
-
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.quizo.quizapp.Question;
+import com.quizo.quizapp.dao.QuestionDao;
 
 
-// @Service
+@Service
 public class QuestionService {
 
+    @Autowired
+    QuestionDao questionDao;
+
     public List<Question> getAllQuestions() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return questionDao.findAll();
     }
+
+    
+
 
 
 }
